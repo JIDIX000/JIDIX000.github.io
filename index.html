@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdades olvidadas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #333333;
+    }
+
+    header {
+      background: #f8f8f8;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 2px solid #d4af37;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: #B68D40; /* dorado brillante */
+      text-shadow: none;
+      -webkit-text-stroke: 0.5px #000000; /* contorno negro delgado */
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #f0f0f0;
+      padding: 0.5rem;
+      border-bottom: 1px solid #c0c0c0;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: #c0c0c0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    .infografias {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #fafafa;
+      border: 1px solid #d4af37;
+      border-radius: 10px;
+      padding: 1rem;
+      transition: transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(192, 192, 192, 0.5);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .card p {
+      margin-top: 0.5rem;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #f8f8f8;
+      border-top: 1px solid #c0c0c0;
+      margin-top: 2rem;
+      color: #888;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+      margin: 5% auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Verdades olvidadas: Historias, Fe y Datos que iluminan</h1>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#infografias">Infografías</a>
+  </nav>
+
+  <section id="inicio">
+    <h2>Paz a voz</h2>
+    <p style="margin-top: 1rem; max-width: 800px;">
+      Este sitio está destinado a compartir infografías sobre distintos temas. Cada infografía está acompañado de textos explicativos para sustentar los temas con base bíblica. nuestro objetivo es presentar temas espirituales, históricos e informativos.
+    </p>
+  </section>
+
+  <section id="infografias">
+    <h2>Biblioteca</h2>
+    <div class="infografias">
+      <div class="card">
+        <img src="img/infografia1.jpg" alt="Infografía 1" onclick="openModal(this.src)">
+        <p>Explicación de la infografía 1.</p>
+      </div>
+      <div class="card">
+        <img src="img/infografia2.jpg" alt="Infografía 2" onclick="openModal(this.src)">
+        <p>Descripción de la infografía 2.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="modal" onclick="this.style.display='none'">
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <footer>
+    &copy; 2025 TuNombre. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function openModal(src) {
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modal-img");
+      modal.style.display = "block";
+      modalImg.src = src;
+    }
+  </script>
+</body>
+</html>
